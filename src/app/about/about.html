@@ -1,4 +1,4 @@
-<section class="py-20 px-6">
+<!-- <section class="py-20 px-6">
   <div class="max-w-3xl mx-auto text-center">
 
     <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mb-8"></div>
@@ -15,4 +15,80 @@
     <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mt-8"></div>
 
   </div>
+</section> -->
+
+<section class="py-20 px-6 bg-[#F5F0E8] overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-6">
+            <div class="w-16 h-0.5 bg-[#D4AF37] mx-auto mb-8"></div>
+            <h2 class="text-4xl font-extrabold tracking-widest uppercase text-green-900 mb-6">
+                About <span class="text-[#D4AF37]">Us</span>
+            </h2>
+            <p class="text-[18px] text-green-900/70 leading-relaxed font-medium max-w-3xl mx-auto">
+                An international dragon boat crew from Graz, united by passion.
+                We train hard, have fun on the water, and race to challenge ourselves.
+            </p>
+        </div>
+
+        <div class="text-center mb-16">
+            <p class="text-green-800/60 uppercase tracking-widest text-sm font-semibold mb-2">Member of</p>
+            <h3 class="text-2xl font-extrabold text-green-900 tracking-wide">
+                Kanu Klub <span class="text-[#D4AF37]">Graz</span>
+            </h3>
+        </div>
+
+        <!-- animation -->
+        <div class="flex flex-col md:flex-row gap-10 justify-center items-stretch">
+
+            <div #card data-direction="left"
+                style="opacity:0; transform: translateX(-96px); transition: all 0.7s ease-out;"
+                class="flex-1 max-w-sm mx-auto">
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg border border-[#D4AF37]/20 hover:shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
+                    <div class="h-64 bg-green-900/10 flex items-center justify-center">
+                        <img src="/trenerTemp.jpg" alt="Coach" class="w-full h-full object-cover"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div
+                            class="hidden w-full h-full bg-gradient-to-br from-green-800 to-green-950 items-center justify-center text-6xl">
+                            🧑‍✈️
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold mb-1">Head Coach</p>
+                        <h3 class="text-xl font-extrabold text-green-900 mb-3">Name Surname</h3>
+                        <p class="text-green-900/60 text-sm leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div #card data-direction="right"
+                style="opacity:0; transform: translateX(96px); transition: all 0.7s ease-out;"
+                class="flex-1 max-w-sm mx-auto">
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg border border-[#D4AF37]/20 hover:shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
+                    <div class="h-64 bg-green-900/10 flex items-center justify-center">
+                        <img src="/trenerTemp.jpg" alt="President" class="w-full h-full object-cover"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div
+                            class="hidden w-full h-full bg-gradient-to-br from-yellow-700 to-yellow-900 items-center justify-center text-6xl">
+                            👑
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold mb-1">Club President</p>
+                        <h3 class="text-xl font-extrabold text-green-900 mb-3">Name Surname</h3>
+                        <p class="text-green-900/60 text-sm leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>

@@ -14,7 +14,7 @@ export class Navbar {
 
   navLinks = [
     { label: 'Home', href: '#' },
-    { label: 'Team', href: '#team' },
+    { label: 'About Us', href: '#aboutus' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Training', href: '#training' },
     { label: 'Contact', href: '#contact' },

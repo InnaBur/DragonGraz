@@ -5,10 +5,11 @@ import { Gallery } from "./gallery/gallery";
 import { About } from "./about/about";
 import { Hero } from "./hero/hero";
 import { Navbar } from "./navbar/navbar";
+import { Join } from "./join/join";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer, Gallery, About, Hero, Navbar],
+  imports: [RouterOutlet, Footer, Gallery, About, Hero, Navbar, Join],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
