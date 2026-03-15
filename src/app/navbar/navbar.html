@@ -1,30 +1,32 @@
-<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-2 bg-green-900/20 backdrop-blur-md border-b border-green-400/20">
+<nav
+  class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-2 bg-green-900/20 backdrop-blur-md border-b border-green-400/20">
 
   <!-- LOGO -->
   <div class="flex items-center gap-3 cursor-pointer group">
-  <div class="relative">
-    <img 
-      src="/logo.jpg" 
-      alt="Team Logo"
-      class="h-15 w-15 object-cover rounded-full ring-2 ring-[#D4AF37]/60 group-hover:ring-[#D4AF37] group-hover:scale-105 transition-all duration-300 shadow-lg shadow-black/40">
-    <div class="absolute inset-0 rounded-full bg-[#D4AF37]/10 group-hover:bg-[#D4AF37]/20 transition-all duration-300"></div>
+    <div class="relative">
+      <img src="logo.jpg" alt="Team Logo"
+        class="h-15 w-15 object-cover rounded-full ring-2 ring-[#D4AF37]/60 group-hover:ring-[#D4AF37] group-hover:scale-105 transition-all duration-300 shadow-lg shadow-black/40">
+      <div
+        class="absolute inset-0 rounded-full bg-[#D4AF37]/10 group-hover:bg-[#D4AF37]/20 transition-all duration-300">
+      </div>
+    </div>
   </div>
-</div>
 
   <!-- NAV LINKS -->
   <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
     <li *ngFor="let link of navLinks">
-      <a 
-        [href]="link.href"
+      <a [href]="link.href"
         class="text-white/80 hover:text-[#D4AF37] text-sm font-medium tracking-wider uppercase transition-colors duration-200 relative group">
         {{ link.label }}
-        <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#D4AF37] group-hover:w-full transition-all duration-300"></span>
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#D4AF37] group-hover:w-full transition-all duration-300"></span>
       </a>
     </li>
   </ul>
 
   <!-- JOIN BUTTON -->
-  <button class="hidden md:block bg-[#186830] hover:bg-[#b8960c] text-white px-5 py-2 rounded-md text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/30">
+  <button
+    class="hidden md:block bg-[#186830] hover:bg-[#b8960c] text-white px-5 py-2 rounded-md text-sm font-bold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/30">
     Join Team
   </button>
 
@@ -34,9 +36,10 @@
 </nav>
 
 <!-- MOBILE MENU -->
-<div *ngIf="menuOpen" class="fixed top-[76px] left-0 right-0 z-40 bg-green-950/95 backdrop-blur-md flex flex-col items-center gap-6 py-8 md:hidden">
-  <a *ngFor="let link of navLinks" [href]="link.href" 
-     class="text-white text-lg font-medium tracking-wide hover:text-[#D4AF37] transition-colors">
+<div *ngIf="menuOpen"
+  class="fixed top-[76px] left-0 right-0 z-40 bg-green-950/95 backdrop-blur-md flex flex-col items-center gap-6 py-8 md:hidden">
+  <a *ngFor="let link of navLinks" [href]="link.href"
+    class="text-white text-lg font-medium tracking-wide hover:text-[#D4AF37] transition-colors">
     {{ link.label }}
   </a>
   <button class="bg-[#D4AF37] text-white px-6 py-3 rounded-md font-bold">Join Team</button>
