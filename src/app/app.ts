@@ -9,7 +9,7 @@ import { Join } from "./join/join";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer, Gallery, About, Hero, Navbar, Join],
+  imports: [Footer, Gallery, About, Hero, Navbar, Join],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

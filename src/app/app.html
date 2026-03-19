@@ -1,21 +1,26 @@
-<!-- <app-navbar></app-navbar>
-
-<app-hero></app-hero>
-
-<app-about></app-about>
-
-<app-gallery></app-gallery>
-
-<app-footer></app-footer> -->
-
 <div class="min-h-screen bg-[#F5F0E8]">
     <app-navbar />
-    <app-hero />
+
+    <section id="home">
+        <app-hero />
+    </section>
+
     <main class="px-4 md:px-8 pt-4">
 
-        <app-about />
-        <app-join />
+        <section id="aboutus">
+            <app-about />
+        </section>
+
+        <section id="training">
+            <app-join />
+        </section>
+
+        <section id="gallery">
+            <app-gallery />
+        </section>
+
     </main>
+    <app-footer id="footer" />
 </div>
 
 <!-- <div class="min-h-screen" style="background: linear-gradient(135deg, #F5F0E8 0%, #EDE8DC 50%, #F0EBE0 100%);"> -->

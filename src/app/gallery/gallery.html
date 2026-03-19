@@ -1,0 +1,103 @@
+<section class="py-24 px-6 bg-[#F5F0E8] overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-16">
+            <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mb-8"></div>
+            <h2 class="text-4xl font-extrabold tracking-widest uppercase text-green-900 mb-4">
+                Our <span class="text-[#D4AF37]">Gallery</span>
+            </h2>
+            <p class="text-green-900/60 text-[17px] font-medium">Moments from the water and beyond.</p>
+            <div class="w-16 h-[2px] bg-[#D4AF37] mx-auto mt-8"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let category of categories"
+                class="group relative overflow-hidden rounded-3xl aspect-[4/3] cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+                (click)="openCategory(category)">
+
+                <!-- Cover  -->
+                <img [src]="category.cover" [alt]="category.name"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+
+                <!-- Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-green-950/80 via-green-950/20 to-transparent group-hover:from-green-950/90 transition-all duration-300">
+                </div>
+
+              
+                <div
+                    class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#D4AF37] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <p class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold mb-1">
+                        {{ category.photos.length }} photos
+                    </p>
+                    <h3 class="text-white font-extrabold text-xl tracking-wide">{{ category.name }}</h3>
+                </div>
+
+                <div
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-white text-lg">→</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MODAL -->
+<div *ngIf="activeCategory" class="fixed inset-0 z-[100] bg-black/95 overflow-y-auto" (click)="closeCategory()">
+
+    <div class="min-h-screen p-6 md:p-12" (click)="$event.stopPropagation()">
+
+        <div class="flex items-center justify-between mb-8 max-w-6xl mx-auto">
+            <div>
+                <p class="text-[#D4AF37] uppercase tracking-widest text-xs font-bold mb-1">Gallery</p>
+                <h3 class="text-white font-extrabold text-2xl">{{ activeCategory!.name }}</h3>
+            </div>
+            <button
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#D4AF37] text-white text-xl transition-all duration-300 flex items-center justify-center"
+                (click)="closeCategory()">✕</button>
+        </div>
+
+        <!-- Foto grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <div *ngFor="let photo of activeCategory!.photos; let i = index"
+                class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer"
+                (click)="openLightbox(i)">
+                <img [src]="photo.src" [alt]="photo.alt"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div
+                    class="absolute inset-0 bg-green-950/0 group-hover:bg-green-950/40 transition-all duration-300 flex items-center justify-center">
+                    <span
+                        class="text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">🔍</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div *ngIf="lightboxOpen" class="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center"
+    (click)="closeLightbox()">
+
+    <button class="absolute top-6 right-8 text-white text-4xl hover:text-[#D4AF37] transition-colors"
+        (click)="closeLightbox()">✕</button>
+
+    <button class="absolute left-6 text-white text-6xl hover:text-[#D4AF37] transition-colors"
+        (click)="prev($event)">‹</button>
+
+    <img [src]="activeCategory!.photos[currentIndex].src" [alt]="activeCategory!.photos[currentIndex].alt"
+        class="max-h-[85vh] max-w-[85vw] object-contain rounded-xl shadow-2xl" (click)="$event.stopPropagation()">
+
+    <button class="absolute right-6 text-white text-6xl hover:text-[#D4AF37] transition-colors"
+        (click)="next($event)">›</button>
+
+    <div class="absolute bottom-6 text-white/60 text-sm tracking-widest">
+        {{ currentIndex + 1 }} / {{ activeCategory!.photos.length }}
+    </div>
+
+</div>
